@@ -15,4 +15,6 @@ Pod::Spec.new do |s|
 
   s.dependency "React-Core"
   s.dependency "SQLCipher", '~> 4.3.0'
+  
+  s.pod_target_xcconfig = { 'USER_HEADER_SEARCH_PATHS' => '"${SRCROOT}/../../../ios/Pods/Headers/Public"/**' }
 end
