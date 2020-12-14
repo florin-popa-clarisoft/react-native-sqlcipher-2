@@ -5,10 +5,10 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sreejithkrishnanr/react-native-sqlcipher-2.git"
+    "url": "git://github.com/florin-popa-clarisoft/react-native-sqlcipher-2.git"
   },
   "bugs": {
-    "url": "https://github.com/sreejithkrishnanr/react-native-sqlcipher-2/issues"
+    "url": "https://github.com/florin-popa-clarisoft/react-native-sqlcipher-2/issues"
   },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
@@ -18,10 +18,10 @@
     "pouchdb",
     "sqlcipher"
   ],
-  "author": "Sreejith Krishnan R <sreejith.aruvikkara@gmail.com>",
+  "author": "Florin Popa <florin.popa@clarisoft.com>",
   "license": "Apache-2.0",
   "peerDependencies": {
-    "react-native": ">= 0.47.0"
+    "react-native": ">= 0.60.0"
   },
   "dependencies": {
     "lodash.map": "^4.6.0",
@@ -32,7 +32,6 @@
     "babel-jest": "23.4.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-react-native": "^5",
-    "react": "16.4.1",
-    "react-native": "0.56.0"
+    "react": "16.4.1"
   }
 }
