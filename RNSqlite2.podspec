@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/florin-popa-clarisoft/react-native-sqlite-2.git", :tag => "master" }
   s.source_files = "**/*.{h,m}"
   s.requires_arc = true
-  s.library      = "sqlite3"
 
   s.dependency "React-Core"
   s.dependency "SQLCipher"
