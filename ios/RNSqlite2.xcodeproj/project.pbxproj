@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* RNSqlite2.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNSqlite2.m */; };
+		F223E156258B87170096B8DA /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = F223E155258B87170096B8DA /* sqlite3.c */; };
+		F223E159258B87940096B8DA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F223E158258B87940096B8DA /* Security.framework */; };
+		F223E15B258B879A0096B8DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F223E15A258B879A0096B8DA /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +29,10 @@
 		134814201AA4EA6300B7C361 /* libRNSqlite2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSqlite2.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* RNSqlite2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSqlite2.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNSqlite2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSqlite2.m; sourceTree = "<group>"; };
+		F223E154258B87170096B8DA /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
+		F223E155258B87170096B8DA /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
+		F223E158258B87940096B8DA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		F223E15A258B879A0096B8DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F223E15B258B879A0096B8DA /* Foundation.framework in Frameworks */,
+				F223E159258B87940096B8DA /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,10 +59,22 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				F223E155258B87170096B8DA /* sqlite3.c */,
+				F223E154258B87170096B8DA /* sqlite3.h */,
 				B3E7B5881CC2AC0600A0062D /* RNSqlite2.h */,
 				B3E7B5891CC2AC0600A0062D /* RNSqlite2.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				F223E157258B87940096B8DA /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		F223E157258B87940096B8DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F223E15A258B879A0096B8DA /* Foundation.framework */,
+				F223E158258B87940096B8DA /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +116,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -113,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* RNSqlite2.m in Sources */,
+				F223E156258B87170096B8DA /* sqlite3.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +232,12 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"-DSQLITE_HAS_CODEC",
+					"-DSQLITE_TEMP_STORE=3",
+					"-DSQLCIPHER_CRYPTO_CC",
+					"-DNDEBUG",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNSqlite2;
 				SKIP_INSTALL = YES;
@@ -227,6 +256,12 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = (
+					"-DSQLITE_HAS_CODEC",
+					"-DSQLITE_TEMP_STORE=3",
+					"-DSQLCIPHER_CRYPTO_CC",
+					"-DNDEBUG",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNSqlite2;
 				SKIP_INSTALL = YES;
